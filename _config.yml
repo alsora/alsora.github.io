@@ -17,8 +17,8 @@ description: A space for my stuff
 # --- List of links in the navigation bar --- #
 
 navbar-links:
-  About Me: "aboutme"
-  Blog: "blog"
+  <i class="fa fa-user" aria-hidden="true"></i> About Me: "aboutme"
+  <i class="fa fa-rss" aria-hidden="true"></i> Blog: "blog"
   <i class="fa fa-rocket" aria-hidden="true"></i> Projects: "projects"
   <i class="fa fa-file-text" aria-hidden="true"></i> Resume: "resume/soragna.pdf"
 
