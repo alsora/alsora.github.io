@@ -1,5 +1,5 @@
 ---
-layout: wide_page
+layout: wide_page_github
 title: Projects
 subtitle:
 ---
