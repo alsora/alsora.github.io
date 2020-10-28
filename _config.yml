@@ -25,8 +25,9 @@ description: A space for my stuff
 navbar-links:
   <i class="fa fa-user" aria-hidden="true"></i> About Me: "aboutme"
   <i class="fa fa-rss" aria-hidden="true"></i> Blog: "blog"
+  <i class="fas fa-atom" aria-hidden="true"></i> Publications: "publications"
   <i class="fa fa-rocket" aria-hidden="true"></i> Projects: "projects"
-  <i class="fa fa-file-text" aria-hidden="true"></i> Resume: "resume"
+  <i class="fas fa-file-alt" aria-hidden="true"></i> Resume: "resume"
 
 # Image to show in the navigation bar - image must be a square (width = height)
 # Remove this parameter if you don't want an image in the navbar
@@ -65,7 +66,6 @@ social-network-links:
 #  medium: yourname
 #  reddit: yourname
   linkedin: alberto-soragna
-  scholar: ZveOfZYAAAAJ
 #  xing: yourname
 #  stackoverflow: "3943160/daattali"
 #  snapchat: deanat78
@@ -79,7 +79,7 @@ social-network-links:
 #  calendly: yourname
 #  mastodon: instance.url/@username
 #  ORCID: your ORCID ID
-#  google-scholar: your google scholar
+  google-scholar: citations?user=ZveOfZYAAAAJ
 #  discord: invite/invite_code or users/userid 
 #  kaggle: yourname
 #  hackerrank: yourname

@@ -1,5 +1,6 @@
 ---
 layout: wide_page_github
+nav-short: true
 title: Projects
 subtitle:
 ---
