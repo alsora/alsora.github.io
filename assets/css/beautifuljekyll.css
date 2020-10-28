@@ -616,8 +616,12 @@ footer .footer-custom-content {
 
 /* --- Post and page headers --- */
 
-.intro-header {
+.intro-standard {
   margin: 5rem 0 1.25rem;
+  position: relative;
+}
+.intro-compact {
+  margin: 50px 0 20px;
   position: relative;
 }
 .intro-header.big-img {
@@ -629,7 +633,7 @@ footer .footer-custom-content {
   margin-top: 3.1875rem; /* The small navbar is 50px tall + 1px border */
   margin-bottom: 2.1875rem;
 }
-nav.top-nav-short-permanent ~ header > .intro-header {
+nav.top-nav-short-permanent ~ header > .intro-standard {
   margin-top: 5rem;
 }
 nav.top-nav-short-permanent ~ header > .intro-header.big-img {
@@ -702,7 +706,7 @@ nav.top-nav-short-permanent ~ header > .intro-header.big-img {
   display: none;
 }
 @media (min-width: 768px) {
-  .intro-header {
+  .intro-standard {
     margin-top: 8.125rem;
   }
   .intro-header.big-img {
