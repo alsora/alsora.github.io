@@ -54,7 +54,7 @@ a:focus {
   color: {{ site.hover-col | default: "#0085A1" }};
 }
 blockquote {
-  color: #808080;
+  color: #999;
   font-style: italic;
 }
 blockquote p:first-child {
@@ -81,21 +81,21 @@ hr.small {
 }
 
 ::-moz-selection {
-  color: #fff;
+  color: {{ site.page-col | default: "#FFFFFF" }};
   text-shadow: none;
   background-color: {{ site.hover-col | default: "#0085A1" }};
 }
 ::selection {
-  color: #fff;
+  color: {{ site.page-col | default: "#FFFFFF" }};
   text-shadow: none;
   background-color: {{ site.hover-col | default: "#0085A1" }};
 }
 img::selection {
-  color: #fff;
+  color: {{ site.page-col | default: "#FFFFFF" }};
   background: transparent;
 }
 img::-moz-selection {
-  color: #fff;
+  color: {{ site.page-col | default: "#FFFFFF" }};
   background: transparent;
 }
 
@@ -143,6 +143,7 @@ img {
 }
 
 .navbar-custom .navbar-brand {
+  color: {{ site.text-col | default: "#404040" }};
   line-height: 1.5;
   padding-top: 0.625rem;
   padding-bottom: 0.625rem;
@@ -181,6 +182,7 @@ img {
 }
 
 .navbar-custom .navbar-nav .nav-link {
+  color: {{ site.text-col | default: "#404040" }};
   padding-top: 0;
   padding-bottom: 0;
   line-height: 1.25rem;
@@ -262,6 +264,7 @@ img {
 
 .navbar-custom .nav-item.dropdown .dropdown-menu .dropdown-item {
   padding: 0.625rem;
+  color: {{ site.text-col | default: "#404040" }};
   background-color: {{ site.navbar-col | default: "#EAEAEA" }};
   text-decoration: none !important;
   font-weight: normal;
@@ -384,6 +387,7 @@ footer {
   border-top: 1px #EAEAEA solid;
   margin-top: 3.125rem;
   font-size: 0.875rem;
+  border-top-color:{{ site.footer-col | default: "#EAEAEA" }};
   background-color: {{ site.footer-col | default: "#EAEAEA" }};
   {% if site.footer-img %}
     background-image: url({{ site.footer-img | relative_url }});
@@ -402,6 +406,10 @@ footer a {
 footer a:hover,
 footer a:focus {
   color: {{ site.footer-hover-col | default: "#0085A1" }};
+}
+
+footer a .fa-inverse {
+  color: #272727;
 }
 
 footer .list-inline {
@@ -448,7 +456,7 @@ footer .footer-custom-content {
 
 .post-preview {
   padding: 1.25rem 0;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #444;
   overflow: hidden;
 }
 
@@ -485,7 +493,7 @@ footer .footer-custom-content {
 }
 .post-preview .post-meta,
 .post-heading .post-meta {
-  color: #808080;
+  color: #999;
   font-size: 1.125rem;
   font-style: italic;
   margin: 0 0 0.625rem;
@@ -625,7 +633,7 @@ footer .footer-custom-content {
 }
 
 #full-tags-list .tag-entry .entry-date {
-  color: #808080;
+  color: #999;
   font-style: italic;
   font-size: 1rem;
 }
@@ -745,10 +753,10 @@ nav.top-nav-short-permanent ~ header > .intro-header.big-img {
 
 .header-section.has-img .no-img {
   margin-top: 0;
-  background-color: #FCFCFC;
+  background-color: #111;
   margin: 0 0 2.5rem;
   padding: 1.25rem 0;
-  box-shadow: 0 0 0.3125rem #AAA;
+  box-shadow: 0 0 0.3125rem #888;
 }
 /* Many phones are 320 or 360px, so make sure images are a proper aspect ratio in those cases */
 .header-section.has-img .intro-header.no-img {
@@ -814,7 +822,7 @@ nav.top-nav-short-permanent ~ header > .intro-header.big-img {
   font-weight: 800;
   letter-spacing: 1px;
   padding: 0.625rem 0.3125rem;
-  background-color: #FFF;
+  background-color: black;
   border-radius: 0;
   color: {{ site.text-col | default: "#404040" }};
 }
@@ -825,7 +833,7 @@ nav.top-nav-short-permanent ~ header > .intro-header.big-img {
 }
 .pagination .page-item .page-link:hover,
 .pagination .page-item .page-link:focus {
-  color: #FFF;
+  color: black;
   border: 1px solid {{ site.hover-col | default: "#0085A1" }};
   background-color: {{ site.hover-col | default: "#0085A1" }};
 }
@@ -836,23 +844,23 @@ table {
   padding: 0;
 }
 table tr {
-  border-top: 1px solid #cccccc;
-  background-color: #ffffff;
+  border-top: 1px solid #666;
+  background-color: #18191A;
   margin: 0;
   padding: 0;
 }
 table tr:nth-child(2n) {
-  background-color: #f8f8f8;
+  background-color: #28292a;
 }
 table tr th {
   font-weight: bold;
-  border: 1px solid #cccccc;
+  border: 1px solid #666;
   text-align: left;
   margin: 0;
   padding: 0.375rem 0.8125rem;
 }
 table tr td {
-  border: 1px solid #cccccc;
+  border: 1px solid #666;
   text-align: left;
   margin: 0;
   padding: 0.375rem 0.8125rem;
@@ -871,12 +879,13 @@ table tr td :last-child {
 code {
   padding: 0.125rem 0.25rem;
   color: #c7254e;
-  background-color: #f9f2f4;
+  background-color: #2b2829;
   border-radius: 0.25rem;
 }
 
 pre code {
   padding: 0;
+  color: inherit;
   background-color: transparent;
   border-radius: 0;
 }
@@ -886,6 +895,7 @@ pre {
   line-height: 1.5em;
   border-radius: 0.25rem;
   padding: 0.59375rem;
+  color: {{ site.text-col | default: "#404040" }};
 }
 .highlight pre {
   border: none;
@@ -894,11 +904,11 @@ pre {
 }
 .highlight > pre {
   background-image: linear-gradient(
-    rgba(0,0,0,0.03), rgba(0,0,0,0.03) 1.5em, rgba(0,0,0,0.02) 1.5em, rgba(0,0,0,0.02) 3em);
+    rgba(255,255,255,0.03), rgba(255,255,255,0.03) 1.5em, rgba(255,255,255,0.02) 1.5em, rgba(255,255,255,0.02) 3em);
   background-size: auto 3em;
   background-position-y: 0.625rem;
-  border: 1px solid rgba(0,0,0,0.1);
-  border-left: 0.4375rem solid #444;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-left: 0.4375rem solid #a0a0a0;
 }
 .highlight > pre:not([class~="highlight"]) { /* code block with line number */
   padding: 0;
@@ -912,9 +922,9 @@ pre {
   margin: 0;
 }
 .highlight pre.lineno {
-  color: rgba(0,0,0,0.3);
+  color: rgba(255,255,255,0.3);
   border-radius: 0;
-  border-right: 2px solid #444;
+  border-right: 2px solid #a0a0a0;
 }
 
 /* Make line numbers unselectable: excludes line numbers from copy-paste user ops */
@@ -955,6 +965,7 @@ pre {
   border: 1px solid #eee;
   border-left-width: 0.3125rem;
   border-radius: 0.3125rem 0.1875rem 0.1875rem 0.3125rem;
+  color: #404040;
 }
 
 .box-note {
@@ -992,7 +1003,7 @@ pre {
   font-size: 0.875rem;
   padding: 0.625rem;
   font-style: italic;
-  color: #777;
+  color: #aaa;
   margin: 0;
   display: block;
   border-bottom-right-radius: 0.3125rem;
@@ -1003,14 +1014,14 @@ pre {
   max-width: 25%;
   border-width: 0.25rem;
   border-radius: 0.1875rem;
-  border-color: #808080;
+  border-color: #999;
 }
 
 .blog-post blockquote {
   padding: 0.625rem 1.25rem;
   margin: 0 0 1.25rem;
   font-size: 1.1rem;
-  border-left: 0.3125rem solid #eee;
+  border-left: 0.3125rem solid #444;
 }
 
 .blog-post blockquote p:last-child {
@@ -1121,6 +1132,11 @@ pre {
   #nav-search-text {
     display: inline-block;
   }
+}
+
+/* --- Jumbotron main page --- */
+.jumbotron {
+  background: #242526;
 }
 
 /* --- Allows to hide divs on mobile --- */

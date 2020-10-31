@@ -1,5 +1,5 @@
 ---
-layout: page_particles
+layout: page
 title: About me
 subtitle: And how to connect with me
 ---
