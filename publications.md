@@ -1,9 +1,9 @@
 ---
 layout: page
 title: Publications
+css:
+ - /assets/css/labels.css
 ---
-
-<link rel="stylesheet" href="/assets/css/labels.css">
 
 ## 2020
 

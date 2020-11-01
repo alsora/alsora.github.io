@@ -509,10 +509,10 @@ footer .footer-custom-content {
   width: 12rem;
 }
 .post-preview .post-image {
-  filter: grayscale(90%);
+  filter: grayscale(90%); /* Standard image is 90% greyscale */
 }
 .post-preview .post-image:hover {
-  filter: grayscale(0%);
+  filter: grayscale(0%); /* Image gets normal when hovering */
 }
 .post-preview .post-image img {
   height: 100%;
