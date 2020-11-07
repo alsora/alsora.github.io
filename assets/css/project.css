@@ -1,0 +1,76 @@
+---
+layout: null
+---
+
+.hidden {
+  display: none;
+}
+
+.grid-item {
+  width: 350px;
+  height: 500px;
+}
+
+.project-card {
+  position: relative;
+  margin: 0.5rem 0 1rem 0;
+  background-color: {{ site.page-col | default: "#FFF" }};
+  border-color: black;
+  -webkit-transition: -webkit-box-shadow .25s;
+  transition: -webkit-box-shadow .25s;
+  transition: box-shadow .25s;
+  transition: box-shadow .25s, -webkit-box-shadow .25s;
+  border-radius: 15px;
+  -webkit-box-shadow: 0 2px 2px 0 rgba(255, 255, 255, 0.14), 0 3px 1px -2px rgba(255, 255, 255, 0.12), 0 1px 5px 0 rgba(255, 255, 255, 0.2);
+          box-shadow: 0 2px 2px 0 rgba(255, 255, 255, 0.34), 0 3px 1px -2px rgba(255, 255, 255, 0.32), 0 1px 5px 0 rgba(255, 255, 255, 0.42);
+}
+
+/* On mouse-over, add a deeper shadow */
+.project-card:hover {
+  box-shadow: 0 12px 16px 0 rgba(255, 255, 255, 0.34);
+}
+
+.project-card:hover .github-area{
+  display: block;
+}
+
+.project-image {
+  width:350px;
+  height:300px;
+  border-radius: 13px 13px 3px 3px;
+}
+
+.project-content {
+  height: 185px;
+  padding: 10px !important;
+  font-size: 15px;
+  color: {{ site.navbar-text-col | default: "#EAEAEA" }};
+}
+
+.project-card .card-title {
+  display: inline !important;
+  font-weight: bold;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: {{ site.navbar-text-col | default: "#EAEAEA" }};
+}
+
+.project-content a {
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: {{ site.navbar-text-col | default: "#EAEAEA" }};
+}
+
+.project-tag a {
+  font-size: 0.9375rem;
+  margin-bottom: 1.875rem;
+  text-decoration: none;
+  padding: 0 0.3125rem;
+  border: 1px solid transparent;
+  border-radius: 0.1875rem;
+  border-color: {{ site.navbar-text-col | default: "#EAEAEA" }};
+  opacity: 1;
+}
+
+.github-area {
+  text-align: right;
+  display: none;
+}

@@ -4268,7 +4268,7 @@ table span.badge {
     left: 100%;
   }
 }
-
+/*
 nav {
   color: #fff;
   background-color: #ee6e73;
@@ -4482,7 +4482,7 @@ nav .input-field label.active i {
   .navbar-fixed {
     height: 64px;
   }
-}
+*/
 
 a {
   text-decoration: none;
@@ -4495,6 +4495,7 @@ html {
   color: rgba(0, 0, 0, 0.87);
 }
 
+/*
 @media only screen and (min-width: 0) {
   html {
     font-size: 14px;
@@ -4521,40 +4522,28 @@ h1, h2, h3, h4, h5, h6 {
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
   font-weight: inherit;
 }
-
+*/
 h1 {
-  font-size: 4.2rem;
-  line-height: 110%;
   margin: 2.8rem 0 1.68rem 0;
 }
 
 h2 {
-  font-size: 3.56rem;
-  line-height: 110%;
   margin: 2.3733333333rem 0 1.424rem 0;
 }
 
 h3 {
-  font-size: 2.92rem;
-  line-height: 110%;
   margin: 1.9466666667rem 0 1.168rem 0;
 }
 
 h4 {
-  font-size: 2.28rem;
-  line-height: 110%;
   margin: 1.52rem 0 0.912rem 0;
 }
 
 h5 {
-  font-size: 1.64rem;
-  line-height: 110%;
   margin: 1.0933333333rem 0 0.656rem 0;
 }
 
 h6 {
-  font-size: 1.15rem;
-  line-height: 110%;
   margin: 0.7666666667rem 0 0.46rem 0;
 }
 
@@ -5586,7 +5575,7 @@ button.btn-floating {
 
 .dropdown-content li > a, .dropdown-content li > span {
   font-size: 16px;
-  color: #26a69a;
+  color: #2B2B2B;
   display: block;
   line-height: 22px;
   padding: 14px 16px;
@@ -6666,6 +6655,10 @@ textarea.materialize-textarea + label:after, .select-wrapper + label:after {
   transition: .3s color;
 }
 
+.input-field [type=text] {
+  color: white;
+}
+
 /* Textarea */
 textarea {
   width: 100%;
@@ -7200,7 +7193,7 @@ select {
   bottom: 0;
   margin: auto 0;
   z-index: 0;
-  fill: rgba(0, 0, 0, 0.87);
+  fill: white;
 }
 
 .select-wrapper + label {
@@ -8486,10 +8479,19 @@ input[type=range]::-ms-thumb {
   visibility: visible;
   -webkit-animation: pulse-animation 1s cubic-bezier(0.24, 0, 0.38, 1) infinite;
           animation: pulse-animation 1s cubic-bezier(0.24, 0, 0.38, 1) infinite;
-  -webkit-transition: opacity .3s, visibility 0s 1s, -webkit-transform .3s;
-  transition: opacity .3s, visibility 0s 1s, -webkit-transform .3s;
-  transition: opacity .3s, transform .3s, visibility 0s 1s;
-  transition: opacity .3s, transform .3s, visibility 0s 1s, -webkit-transform .3s;
+  -webkit-transition: opacity .3s,
+ visibility 0s 1s,
+ -webkit-transform .3s;
+  transition: opacity .3s,
+ visibility 0s 1s,
+ -webkit-transform .3s;
+  transition: opacity .3s,
+ transform .3s,
+ visibility 0s 1s;
+  transition: opacity .3s,
+ transform .3s,
+ visibility 0s 1s,
+ -webkit-transform .3s;
 }
 
 .tap-target {
@@ -8542,10 +8544,19 @@ input[type=range]::-ms-thumb {
 
 .tap-target-wave::after {
   visibility: hidden;
-  -webkit-transition: opacity .3s, visibility 0s, -webkit-transform .3s;
-  transition: opacity .3s, visibility 0s, -webkit-transform .3s;
-  transition: opacity .3s, transform .3s, visibility 0s;
-  transition: opacity .3s, transform .3s, visibility 0s, -webkit-transform .3s;
+  -webkit-transition: opacity .3s,
+ visibility 0s,
+ -webkit-transform .3s;
+  transition: opacity .3s,
+ visibility 0s,
+ -webkit-transform .3s;
+  transition: opacity .3s,
+ transform .3s,
+ visibility 0s;
+  transition: opacity .3s,
+ transform .3s,
+ visibility 0s,
+ -webkit-transform .3s;
   z-index: -1;
 }
 

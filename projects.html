@@ -1,0 +1,168 @@
+---
+layout: page
+full-width: true
+title: Projects
+css:
+ - assets/css/materialize.css
+ - assets/css/project.css
+js:
+ - assets/js/jquery-1.11.2.min.js
+ - assets/js/materialize.js
+ - assets/js/isotope.pkgd.js
+ - assets/js/grid.js
+ - https://buttons.github.io/buttons.js
+
+projects:
+  -
+    name: Alberto Soragna Website
+    thumbnail: ../assets/img/projects/website.png
+    ghuser: alsora
+    ghrepo: alsora.github.io
+    languages: HTML
+    tags: Design
+    short: The source code for this very website. Adapted from the Beautiful Jekyll theme taking advantage of multiple JS libraries.
+  -
+    name: Chinese Postman Problem
+    thumbnail: ../assets/img/projects/cpp.png
+    ghuser: alsora
+    ghrepo: chinese-postman-problem
+    languages: C++
+    tags: Mobile Robotics, ROS
+    short: Solver for the Chinese Postman Problem and its most common variants. Integration as ROS exploration plugin.
+  -
+    name: CNN Visualization
+    thumbnail: ../assets/img/projects/cnn_viz.png
+    ghuser: alsora
+    ghrepo: CNN_Visualization
+    languages: Python
+    tags: Machine Learning
+    short: Implementation of several techniques for understanding how CNNs learn and perform inference.
+  -
+    name: Deep Briscola
+    thumbnail: ../assets/img/projects/briscola.png
+    ghuser: alsora
+    ghrepo: deep-briscola
+    languages: Python
+    tags: Machine Learning
+    short: Deep Reinforcement Learning algorithms and models for training agents to play the Italian card game Briscola.
+  -
+    name: Python3 Course
+    thumbnail: ../assets/img/projects/python-course.png
+    ghuser: alsora
+    ghrepo: python3-course-notebooks
+    languages: Python
+    tags: Tutorial
+    short: Introductory course to Python programming for complete beginners with classes divided into Jupyter notebooks.  
+  -
+    name: ROS 2 Code Examples
+    thumbnail: ../assets/img/projects/ros2-code.png
+    ghuser: alsora
+    ghrepo: ros2-code-examples
+    languages: C++
+    tags: ROS, Tutorial
+    short: Practical examples for how to use both basic and more advanced ROS 2 concepts, expanding on the official docs.
+  -
+    name: ROS 2 ORBSLAM 2
+    thumbnail: ../assets/img/projects/orbslam2.png
+    ghuser: alsora
+    ghrepo: ros2-ORB_SLAM2
+    languages: C++
+    tags: Mobile Robotics, ROS
+    short: ROS 2 wrapper for the ORBSLAM 2 package. Visual SLAM algorithms for monocular and stereo cameras.  
+  -
+    name: ROS 2 Performance
+    thumbnail: ../assets/img/projects/ros2-performance.png
+    ghuser: irobot-ros
+    ghrepo: ros2-performance
+    languages: C++
+    tags: ROS
+    short: Framework for measuring performance of arbitrary ROS 2 systems configured at runtime through JSON files.  
+  -
+    name: ROS 2 Tensorflow
+    thumbnail: ../assets/img/projects/ros2-tensorflow.png
+    ghuser: alsora
+    ghrepo: ros2-tensorflow
+    languages: Python
+    tags: Machine Learning, ROS
+    short: ROS 2 package for loading Tensorflow computer vision models and perform inference through topics and services.
+  -
+    name: Scientific Resume
+    thumbnail: ../assets/img/projects/resume.png
+    ghuser: alsora
+    ghrepo: latex-scientific-resume
+    languages: TeX
+    tags: Design
+    short: Easy to customize template for a colorful scientific resume with one page and two columns built using XeLaTeX.
+  -
+    name: Tensorflow for NLP
+    thumbnail: ../assets/img/projects/tensorflow-nlp.png
+    ghuser: alsora
+    ghrepo: tensorflow-nlp
+    languages: Java, Python
+    tags: Machine Learning
+    short: Framework for training, testing and serving Tensorflow models for a variety of Natural Language Processing tasks.
+---
+
+<div class="container center">
+  <div class="row">
+    <form class="col s12">
+      <div class="row">
+        <!--
+        <div class="input-field col s2">
+          <select id="gridsort">
+            <option value="stars" selected>Stars</option>
+            <option value="name">Name</option>
+          </select>
+          <label>Sort</label>
+        </div>
+        -->
+        <div class="input-field col s4">
+          <input type="text" id="textfilter" class="validate" placeholder="search keywords">
+          <label>Text Filter</label>
+        </div>
+        <div class="input-field col s3">
+          <select id="languagefilter">
+            <option value="" selected>&nbsp;</option>
+          </select>
+          <label>Language Filter</label>
+        </div>
+        <div class="input-field col s3">
+          <select id="tagfilter">
+            <option value="" selected>&nbsp;</option>
+          </select>
+          <label>Tag Filter</label>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="main-container">
+  <div class="container">
+  </div>
+  <div class="row" style="margin: 0 auto; width: 90%;" id="grid">
+    {% for project in page.projects %}
+    <div class="card grid-item project-card invisible">
+
+      <div class="card-image waves-effect waves-block waves-light">
+        <div style="width:350px; height:300px; padding:3px;" class="valign-wrapper">
+          <a href="https://github.com/{{ project.ghuser }}/{{ project.ghrepo }}">
+            <img class="valign" style="object-fit: fill;" src="{{ project.thumbnail }}"></a>
+        </div>
+      </div>
+
+      <div class="card-content project-content">
+        <a href="https://github.com/{{ project.ghuser }}/{{ project.ghrepo }}"><span class="card-title">{{ project.name }}</span></a>
+        <p class="project-shortdesc">{{ project.short | markdownify | remove: '<p>' | remove: '</p>' }}</p>
+        <p style="margin-top: 0.35em;"> <span class="project-tag"><a>Languages:</a></span> <span class="project-languages">{{ project.languages }}</span></p>
+        <p style="margin-top: 0.45em;"> <span class="project-tag"><a>Tags:</a></span> <span class="project-tags">{{ project.tags }}</span></p>
+        <P class="github-area" style="margin-top: 0.45em;">
+          <a class="github-button" id="stars" href="https://github.com/{{ project.ghuser }}/{{ project.ghrepo }}" data-icon="octicon-star" data-show-count="false" width="100px" height="20px" aria-label="Star {{ project.ghuser }}/{{ project.ghrepo }} on GitHub">Star</a>
+          <a class="github-button" href="https://github.com/{{ project.ghuser }}/{{ project.ghrepo }}/fork" data-icon="octicon-repo-forked" data-show-count="false" width="100px" height="20px"aria-label="Fork {{ project.ghuser }}/{{ project.ghrepo }} on GitHub">Fork</a>
+          <a class="github-button" href="https://github.com/{{ project.ghuser }}/{{ project.ghrepo }}/subscription" data-icon="octicon-eye" data-show-count="false" width="100px" height="20px"aria-label="Watch {{ project.ghuser }}/{{ project.ghrepo }} on GitHub">Watch</a>
+        </p>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
