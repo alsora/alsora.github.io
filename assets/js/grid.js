@@ -2,45 +2,51 @@ $( function() {
 
   // count number of languages to populate dropdown
   // and key it so it can be alphabetized by language
-  var widget_languages = {};
-  $('.widget-language').each(function() {
-    var cur_language = $(this).html();
-    var lcur_language = cur_language.toLowerCase();
-    if(widget_languages[lcur_language] === undefined)
-      widget_languages[lcur_language] = {language: cur_language, count: 0};
-    widget_languages[lcur_language].count = widget_languages[lcur_language].count + 1;
+  var project_languages = {};
+  $('.project-languages').each(function() {
+    var cur_languages = $(this).html();
+    cur_languages = cur_languages.split(',');
+    for (var i = 0; i < cur_languages.length; i++) {
+      var cur_language = cur_languages[i].trim();
+      var lcur_language = cur_language.toLowerCase();
+      if(cur_language !== '') {
+        if(project_languages[lcur_language] === undefined)
+          project_languages[lcur_language] = {language: cur_language, count: 0};
+          project_languages[lcur_language].count = project_languages[lcur_language].count + 1;
+      }
+    }
   });
 
   // populate the language filter dropdown
-  $.each(Object.keys(widget_languages).sort(), function (i, val) {
+  $.each(Object.keys(project_languages).sort(), function (i, val) {
     $('#languagefilter').append($('<option/>', {
-      value: widget_languages[val].language,
-      text : widget_languages[val].language + ' (' + widget_languages[val].count + ')'
+      value: project_languages[val].language,
+      text : project_languages[val].language + ' (' + project_languages[val].count + ')'
     }));
   });
 
   // count tags to populate dropdown
   // and key it so it can be alphabetized by author
-  var widget_tags = {};
-  $('.widget-tags').each(function() {
+  var project_tags = {};
+  $('.project-tags').each(function() {
     var cur_tags = $(this).html();
     cur_tags = cur_tags.split(',');
     for (var i = 0; i < cur_tags.length; i++) {
       var cur_tag = cur_tags[i].trim();
       var lcur_tag = cur_tag.toLowerCase();
       if(cur_tag !== '') {
-        if(widget_tags[lcur_tag] === undefined)
-          widget_tags[lcur_tag] = {tag: cur_tag, count: 0};
-        widget_tags[lcur_tag].count = widget_tags[lcur_tag].count + 1;
+        if(project_tags[lcur_tag] === undefined)
+          project_tags[lcur_tag] = {tag: cur_tag, count: 0};
+          project_tags[lcur_tag].count = project_tags[lcur_tag].count + 1;
       }
     }
   });
 
   // populate the tag filter dropdown
-  $.each(Object.keys(widget_tags).sort(), function (i, val) {
+  $.each(Object.keys(project_tags).sort(), function (i, val) {
     $('#tagfilter').append($('<option/>', {
-      value: widget_tags[val].tag,
-      text : widget_tags[val].tag + ' (' + widget_tags[val].count + ')'
+      value: project_tags[val].tag,
+      text : project_tags[val].tag + ' (' + project_tags[val].count + ')'
     }));
   });
 
@@ -55,15 +61,17 @@ $( function() {
     getSortData: {
       // language: '[data-language]',
       language: function( itemElem ) {
-        var name = $( itemElem ).find('.widget-language').text();
+        var name = $( itemElem ).find('.project-languages').text();
         return name.toLowerCase();
       },
       name: function( itemElem ) {
         var name = $( itemElem ).find('.card-title').text();
+        console.log("NAME: " + name);
         return name.toLowerCase();
       },
       stars: function( itemElem ) {
-        var stars = -parseInt($( itemElem ).find(".gh-count").html());
+        var stars = -parseInt($( itemElem ).find(".stargazers_count").html());
+        console.log("STARS: --- " + stars);
         return stars;
       }
     },
@@ -138,32 +146,31 @@ $( function() {
       var textBool = true;
       if(textVal !== '') {
         qsRegex = new RegExp( textVal, 'gi' );
-        curText = $(this).find('.card-title').html() + " " + $(this).find('.widget-language').html() + " " + $(this).find('.widget-tags').html() + " " + $(this).find('.widget-shortdesc').html();
+        curText = $(this).find('.card-title').html() + " " + $(this).find('.project-languages').html() + " " + $(this).find('.project-tags').html() + " " + $(this).find('.project-shortdesc').html();
         textBool = qsRegex.test(curText);
       }
 
       var tagBool = true;
       if(! (tagVal === '' || tagVal === null)) {
         tagBool = false;
-        var tags = $(this).find('.widget-tags').html();
+        var tags = $(this).find('.project-tags').html();
         tags = tags.split(',');
         for (var i = 0; i < tags.length; i++) {
-          tagBool = tagBool || (tags[i] == tagVal);
+          tagBool = tagBool || (tags[i].trim() == tagVal);
         }
       }
 
       var languageBool = true;
       if(! (languageVal === '' || languageVal === null)) {
         languageBool = false;
-        languageBool = $(this).find('.widget-language').html() == languageVal;
+        var languages = $(this).find('.project-languages').html();
+        languages = languages.split(',');
+        for (var i = 0; i < languages.length; i++) {
+          languageBool = languageBool || (languages[i].trim() == languageVal);
+        }
       }
 
-      var cranBool = $(this).find('.widget-cran').html() === "true";
-      if($("#crancheckbox:checked").length === 0) {
-        cranBool = true;
-      }
-
-      var res = textBool && tagBool && languageBool && cranBool;
+      var res = textBool && tagBool && languageBool;
       if(res) {
         $(this).addClass('is-showing');
       } else {
@@ -171,12 +178,37 @@ $( function() {
       }
       return res;
     }});
-    $("#shown-widgets").html($('.is-showing').length);
+    $("#shown-projects").html($('.is-showing').length);
   }
 
-  // wrap hrefs around the tag listings for each widget
+  // wrap hrefs around the language listings for each project
+  // so when clicked they can fire off a filter on that language
+  $('.project-languages').each(function(i) {
+    var languageVals = $(this).html().split(',');
+    $(this).addClass('hidden');
+    for (var j = 0; j < languageVals.length; j++) {
+      var el = document.createElement("a");
+      el.className = 'languagehref';
+      el.textContent = languageVals[j];
+      el.href = 'javascript:;';
+      $(this).before(el);
+      if (j < languageVals.length - 1) {
+        $(this).before(", ");
+      }
+    }
+  });
+
+  // handle click on language hrefs
+  $('.languagehref').click(function() {
+    $('#languagefilter > option').removeAttr("selected");
+    $('#languagefilter > option[value="' + $(this).html() + '"]').attr("selected", "selected");
+    $('select').formSelect();
+    $('#languagefilter').trigger('change');
+  });
+
+  // wrap hrefs around the tag listings for each project
   // so when clicked they can fire off a filter on that tag
-  $('.widget-tags').each(function(i) {
+  $('.project-tags').each(function(i) {
     var tagVals = $(this).html().split(',');
     $(this).addClass('hidden');
     for (var j = 0; j < tagVals.length; j++) {
@@ -198,22 +230,11 @@ $( function() {
     $('select').formSelect();
     $('#tagfilter').trigger('change');
   });
-
-  $.getJSON( "github_meta.json", function(data) {
-    $.each(data, function(key, val) {
-      $('#' + key).html(val.stargazers_count);
-    });
-  })
-  .success(function() {
-    // default sort is by github stars - trigger it on load
-    $('#gridsort').trigger('change');
-  });
-
-  // enforce initial filter (CRAN only)
-  handleFilter();
-  // make sure "Showing x of n" is correct
-  var curlen = $(".widget-cran").filter(function() {return $(this).html() === "true"}).length;
-  $("#shown-widgets").html(curlen);
+  
+  // default sort is by github stars - trigger it on load
+  $('#gridsort').trigger('change');
+  // now make things transparent
+  $('.grid-item').removeClass('invisible');
 });
 
 function debounce( fn, threshold ) {
