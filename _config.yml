@@ -257,6 +257,7 @@ paginate_path: "/blog/page:num/"
 
 kramdown:
   input: GFM
+  toc_levels: 2..2
 
 # Default YAML values (more information on Jekyll's site)
 defaults:
