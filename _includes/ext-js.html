@@ -2,6 +2,8 @@
   <script src="{{ include.js.href }}" integrity="{{ include.js.sri }}" crossorigin="anonymous"></script>
 {% elsif include.js.href %}
   <script src="{{ include.js.href }}"></script>
+{% elsif include.js.script %}
+  <script>{{ include.js.script }}</script>
 {% else %}
   <script src="{{ include.js }}"></script>
 {% endif %}
