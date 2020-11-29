@@ -140,3 +140,9 @@ var BeautifulJekyllJS = {
 // 2fc73a3a967e97599c9763d05e564189
 
 document.addEventListener('DOMContentLoaded', BeautifulJekyllJS.init);
+
+/** Remove empty line at beginning of pre code section */
+var y = document.querySelectorAll("pre code");
+for(var i = 0; i < y.length; i++) {
+  y[i].innerHTML = y[i].innerHTML.replace("\n", "");
+}

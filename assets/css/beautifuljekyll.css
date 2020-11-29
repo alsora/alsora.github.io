@@ -879,7 +879,6 @@ table tr td :last-child {
   margin-bottom: 0;
 }
 
-/* --- Code blocks --- */
 
 code {
   padding: 0.125rem 0.25rem;
@@ -1176,4 +1175,17 @@ pre {
   .navbar-expand-custom .navbar-toggler {
       display: none;
   }
+}
+
+/* --- Table of contents --- */
+#markdown-toc::before {
+  content: "Contents";
+  font-weight: bold;
+}
+
+#markdown-toc {
+  border: 1px solid #aaa;
+  padding: 1.5em;
+  list-style: decimal;
+  display: inline-block;
 }
