@@ -6,7 +6,7 @@ title: Blog
 {% assign posts = paginator.posts | default: site.posts %}
 
 <div class="posts-list">
-  {% for post in posts %}
+  {% for post in site.categories.blog %}
   <article class="post-preview">
 
     {%- capture thumbnail -%}
