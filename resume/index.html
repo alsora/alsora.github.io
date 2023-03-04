@@ -3,8 +3,18 @@ layout: page
 title: My resume
 ---
 
-<div style="text-align: center; margin-top: 25px;">
-  <a href="soragna_resume.pdf" target="_blank">
-    <img class="valign" style="object-fit: fill;" src="soragna_resume.jpg">
-  </a>
-</div>
+<style>
+  /* Only resize the element if PDF is embedded */
+  .pdfobject-container {
+    width: 120%;
+    height: 1175px;
+    border: 1rem solid rgba(0,0,0,.1);
+    margin: 0;
+  }
+</style>
+
+<div id="pdf"></div>
+<script src="https://unpkg.com/pdfobject@2.2.8/pdfobject.min.js"></script>
+<script>
+PDFObject.embed("soragna_resume.pdf", "#pdf");
+</script>
