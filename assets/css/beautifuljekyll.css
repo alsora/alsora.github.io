@@ -521,14 +521,14 @@ footer .footer-custom-content {
   width: 12rem;
 }
 .post-preview .post-image {
-  filter: grayscale(80%); /* Image greyscale percentage when not hovering */
+  filter: grayscale(80%); /* Blog post image greyscale percentage when not hovering */
 }
 .post-preview .post-image:hover {
-  filter: grayscale(0%); /* Image gets normal when hovering */
+  filter: grayscale(0%); /* Blog post image gets normal when hovering */
 }
 
 .post-preview:hover .post-image {
-  filter: grayscale(0%); /* Image gets normal when hovering */
+  filter: grayscale(0%); /* Blog post image gets normal when hovering */
 }
 
 .post-preview .post-image img {
@@ -1185,7 +1185,10 @@ pre {
 
 #markdown-toc {
   border: 1px solid #aaa;
-  padding: 1.5em;
+  padding-top: 1.5em;
+  padding-right: 1.5em;
+  padding-bottom: 1.5em;
+  padding-left: 3em; /* This is larger because we need to fit the toc item number */
   list-style: decimal;
   display: inline-block;
 }
