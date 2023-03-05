@@ -14,8 +14,27 @@
       closeOnContentClick: true,
       zoom: {
         enabled: true,
-        duration: 300
+        duration: 300,
+        easing: 'ease-in'
       }
     });
   });
+</script>
+
+<script type="text/javascript">
+$('.my-gallery-popup').each(function() { // the containers for all your galleries
+  $(this).magnificPopup({
+      delegate: 'a', // the selector for gallery item
+      type: 'image',
+      mainClass: 'mfp-with-zoom',
+      gallery: {
+        enabled: true
+      },
+      zoom: {
+        enabled: true,
+        easing: 'ease-in',
+        duration: 400 // don't foget to change the duration also in CSS
+      }
+  });
+});
 </script>
