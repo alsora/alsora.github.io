@@ -66,12 +66,10 @@ $( function() {
       },
       name: function( itemElem ) {
         var name = $( itemElem ).find('.card-title').text();
-        console.log("NAME: " + name);
         return name.toLowerCase();
       },
       stars: function( itemElem ) {
         var stars = -parseInt($( itemElem ).find(".stargazers_count").html());
-        console.log("STARS: --- " + stars);
         return stars;
       }
     },
@@ -136,11 +134,6 @@ $( function() {
     var languageVal = $('#languagefilter').val();
     var textVal = $('#textfilter').val();
     var qsRegex;
-
-    console.log("tagVal: " + tagVal);
-    console.log("languageVal: " + languageVal);
-    console.log("textVal: " + textVal);
-    console.log("qsRegex: " + qsRegex);
 
     $grid.isotope({ filter : function() {
       var textBool = true;
