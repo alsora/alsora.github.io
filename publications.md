@@ -5,6 +5,10 @@ css:
  - /assets/css/labels.css
 ---
 
+## 2023
+
+<span class='paper'>Conference Paper</span> S. Macenski, **A. Soragna**, M. Carroll, Z. Ge, [*"Impact of ROS 2 Node Composition in Robotic Systems"*](https://ieeexplore.ieee.org/document/10132508), 2023 IEEE Robotics and Automation Letters (RAL).
+
 ## 2020
 
 <span class='patent'>Patent</span> **A. Soragna**, M. Baldini and D. Joho, [*"Driving a path with a mobile robot"*](https://patents.google.com/patent/DE102019202705A1/en), KUKA Deutschland GmbH.
