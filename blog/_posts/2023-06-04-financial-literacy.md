@@ -15,17 +15,30 @@ I find this definition to be incredibly inspiring, and I wholeheartedly agree wi
 
 In order to facilitate self-assessment and encourage individuals to gauge their financial literacy, I have developed a financial literacy quiz. The quiz is divided into separate modules, and after completing each module, participants are encouraged to check their scores before proceeding to the next one.
 
+<style>
+  .google-form-frame {
+    width: 820px;
+    height: 640px;
+  }
+  @media (max-width: 820px) {
+    .google-form-frame {
+      width: 80vw;
+      height: 80vh;
+    }
+  }
+</style>
+
 ### Financial Literacy Survey Module
 
 This module consists of straightforward questions that should not be overanalyzed.
 
-<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfz6labdKT7DrHMgygGfvOE_ylEzScusuAwDFsKDYwTuRb53g/viewform?embedded=true" width="820" height="640" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+<iframe class="google-form-frame" src="https://docs.google.com/forms/d/e/1FAIpQLSfz6labdKT7DrHMgygGfvOE_ylEzScusuAwDFsKDYwTuRb53g/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
 
 ### Financial Instruments Module
 
 This module digs deeper into financial literacy concepts and aims at evaluating the knowledge of the most common financial instruments.
 
-<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSe_8BXT2tjnDbwVlLhsyeM-FCJJcfQZYDA3yGaRIAJtWmZqww/viewform?embedded=true" width="820" height="640" frameborder="0" marginheight="0" marginwidth="0">Loading</iframe>
+<iframe class="google-form-frame" src="https://docs.google.com/forms/d/e/1FAIpQLSe_8BXT2tjnDbwVlLhsyeM-FCJJcfQZYDA3yGaRIAJtWmZqww/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
 
 ### Additional Resources
 
