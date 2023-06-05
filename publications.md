@@ -5,6 +5,8 @@ css:
  - /assets/css/labels.css
 ---
 
+For more details about my publications, have a look at my [Google Scholar profile](https://scholar.google.com/citations?hl=it&user=ZveOfZYAAAAJ).
+
 ## 2023
 
 <span class='journal'>Journal Article</span> S. Macenski, **A. Soragna**, M. Carroll, Z. Ge, [*"Impact of ROS 2 Node Composition in Robotic Systems"*](https://ieeexplore.ieee.org/document/10132508), 2023 IEEE Robotics and Automation Letters (RAL).
