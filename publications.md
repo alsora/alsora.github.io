@@ -11,6 +11,8 @@ For more details about my publications, have a look at my [Google Scholar profil
 
 <span class='journal'>Journal Article</span> S. Macenski, **A. Soragna**, M. Carroll, Z. Ge, [*"Impact of ROS 2 Node Composition in Robotic Systems"*](https://ieeexplore.ieee.org/document/10132508), 2023 IEEE Robotics and Automation Letters (RAL).
 
+<span class='paper'>Conference Paper</span> **A. Soragna**, S. Shamlian, [*"Building the iRobot® Create® 3 Robot: Challenges and Solutions for ROS 2 Consumer Robotics"*](https://roscon.ros.org/2023/talks/Building_the_iRobotr_Creater_3_Robot_Challenges_and_Solutions_for_ROS_2_Consumer_Robotics.pdf), ROSCon 2023.
+
 ## 2020
 
 <span class='patent'>Patent</span> **A. Soragna**, M. Baldini and D. Joho, [*"Driving a path with a mobile robot"*](https://patents.google.com/patent/DE102019202705A1/en), KUKA Deutschland GmbH.
